@@ -3,9 +3,9 @@
     <keep-alive>
       <router-view></router-view>
     </keep-alive>
-    <van-tabbar v-model="active">
-      <van-tabbar-item icon="home-o">首页</van-tabbar-item>
-      <van-tabbar-item icon="search">我的</van-tabbar-item>
+    <van-tabbar v-model="active" router>
+      <van-tabbar-item icon="home-o" to="/">首页</van-tabbar-item>
+      <van-tabbar-item icon="search" to="/mine">{{ $store.state.user ? '我的' : '未登录'}}</van-tabbar-item>
     </van-tabbar>
   </div>
 </template>
